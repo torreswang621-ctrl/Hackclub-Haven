@@ -22,6 +22,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if(direction == -1):
+		_animated_sprite.flip_h = true
+	else:
+		_animated_sprite.flip_h = false
 	
 	move_and_slide()
 	if Input.is_action_just_pressed("Throw") and snowball_cd == 0:
