@@ -1,5 +1,66 @@
 [gd_scene format=3 uid="uid://dxqxc7611iaqj"]
 
-[node name="Ball" type="CharacterBody2D" unique_id=1916746642]
+[ext_resource type="Script" uid="uid://bslvufwj5uj57" path="res://ball.gd" id="1_41u45"]
+[ext_resource type="Texture2D" uid="uid://cojp0cyot2vx5" path="res://SnowballPhase5.png" id="2_gchj4"]
+[ext_resource type="Texture2D" uid="uid://cihvpripxxmh0" path="res://SnowballPhase4.png" id="3_01kih"]
+[ext_resource type="Texture2D" uid="uid://cxi3sy87v8q1r" path="res://SnowballPhase3.png" id="4_1iob0"]
+[ext_resource type="Texture2D" uid="uid://eqtuh8tdedyi" path="res://SnowballPhase2.png" id="5_0jqm0"]
+[ext_resource type="Texture2D" uid="uid://bauyq2ak4ecsr" path="res://SnowballPhase1.png" id="6_nidkk"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847447202]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3q50l"]
+radius = 16.124516
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3q50l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gchj4")
+}],
+"loop": 1,
+"name": &"Phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_01kih")
+}],
+"loop": 1,
+"name": &"Phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1iob0")
+}],
+"loop": 1,
+"name": &"Phase3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0jqm0")
+}],
+"loop": 1,
+"name": &"Phase4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nidkk")
+}],
+"loop": 1,
+"name": &"Phase5",
+"speed": 5.0
+}]
+
+[node name="Ball" type="CharacterBody2D" unique_id=1916746642]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_41u45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104436991]
+shape = SubResource("CircleShape2D_3q50l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1549803799]
+sprite_frames = SubResource("SpriteFrames_3q50l")
+animation = &"Phase1"
