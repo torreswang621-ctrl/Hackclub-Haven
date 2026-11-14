@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+@onready var _animated_sprite = $AnimatedSprite2D
+var _current_anim := ""
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +24,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if not is_on_floor():
+		_play_anim("jump")
+	elif direction != 0:
+		_play_anim("walk")
+	else:
+		_play_anim("idle")
+
+	
+func _play_anim(anim_name: String) -> void:
+		if _current_anim == anim_name:
+			return
+		_current_anim = anim_name
+		_animated_sprite.play(anim_name)
