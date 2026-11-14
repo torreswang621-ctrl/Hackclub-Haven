@@ -60,5 +60,3 @@ func throw_ball(direction):
 	else:
 		ball.velocity = Vector2(throw_speed, -throw_height)
 	
-
-	get_tree().current_scene.add_child(ball)
