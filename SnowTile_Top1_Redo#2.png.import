@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7wpfxgb7q8ui"
-path="res://.godot/imported/SnowyTile_Top1_Redo.png-9fdd06ed0cf5e321acaec7c0599e7eb6.ctex"
+uid="uid://bqyljuhiswyip"
+path="res://.godot/imported/SnowTile_Top1_Redo#2.png-6ed7401d34700256def67d69daed73af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SnowyTile_Top1_Redo.png"
-dest_files=["res://.godot/imported/SnowyTile_Top1_Redo.png-9fdd06ed0cf5e321acaec7c0599e7eb6.ctex"]
+source_file="res://SnowTile_Top1_Redo#2.png"
+dest_files=["res://.godot/imported/SnowTile_Top1_Redo#2.png-6ed7401d34700256def67d69daed73af.ctex"]
 
 [params]
 
