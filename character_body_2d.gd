@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -500.0
 var _current_anim := ""
 var BallScene = preload("res://ball.tscn")
 var can_throw_snowballs := false
+var throwdirection = 1;
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
+		throwdirection = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if(direction == -1):
@@ -30,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:
-		throw_ball(direction)
+		throw_ball(throwdirection)
 		snowball_cd = current_snow_cd_time
 	if not is_on_floor():
 		_play_anim("jump")

@@ -9,7 +9,7 @@ var has_triggered := false
 
 var dialogue = [
 	"Young traveller, welcome to the realm of the snow, my beloved homeland.",
-	"Thank you for finding your way to my treasure and freeing me.",
+	"Thank you for finding your way to a seal and freeing a part of me.",
 	"Years ago, a dark force chained me and sealed me to my biome. They took away all of my powers.",
 	"One of the seals has been broken. Because of this, I bestow upon you the power to control snowballs. Use this power wisely.",
 	"As I am still chained I am unable to journey with you. However, journey into the dark cave where you can find the next seal.",
@@ -18,14 +18,31 @@ var dialogue = [
 
 
 func _ready():
-	print("CUTSCENE TRIGGER READY!")
-
+	$CanvasLayer/Control/BackgroundOverlay.hide()
 	if not body_entered.is_connected(_on_body_entered):
 		body_entered.connect(_on_body_entered)
 
+	# Make Control cover the screen
+	$CanvasLayer/Control.set_anchors_and_offsets_preset(
+		Control.PRESET_FULL_RECT
+	)
+
+# Prepare dialogue box
 	dialogue_box.hide()
 	dialogue_box.modulate.a = 0.0
 
+# Give the dialogue box a position and size
+	var screen_size = get_viewport_rect().size
+	dialogue_box.position = Vector2(40, 40)
+	dialogue_box.size = Vector2(screen_size.x - 80, 140)
+
+# Make sure the text itself is visible
+	dialogue_text.modulate.a = 1.0
+	dialogue_text.visible = true
+	dialogue_text.add_theme_color_override("font_color", Color.WHITE)
+	dialogue_text.add_theme_font_size_override("font_size", 32)
+	# Prepare screen fade
+	screen_fade.show()
 	screen_fade.modulate.a = 0.0
 
 
@@ -35,63 +52,39 @@ func _on_body_entered(body):
 
 	if has_triggered:
 		return
-
-	print("PLAYER ENTERED CUTSCENE!")
-
 	body.velocity.x = 100
-
-	# Wait until the player reaches the floor
 	while not body.is_on_floor():
 		await get_tree().process_frame
-
-	print("PLAYER LANDED!")
-
 	has_triggered = true
-
-	# Stop player movement
 	body.set_physics_process(false)
-
-	# Fade screen to black
+	body.get_node("AnimatedSprite2D").play("idle")
 	await fade_screen(1.0, 1.0)
-
-	# Fade screen back in
+	$CanvasLayer/Control/BackgroundOverlay.show()
 	await fade_screen(0.0, 1.0)
-
-	# Show dialogue box
 	dialogue_box.show()
-
-	# Display each paragraph
 	for line in dialogue:
 		await show_dialogue(line)
-
-	# Fade out final paragraph
 	await fade_dialogue(0.0, 0.7)
-
 	dialogue_box.hide()
-
-	# Allow player movement again
+	await fade_screen(1.0, 1.0)
+	$CanvasLayer/Control/BackgroundOverlay.hide()
+	await fade_screen(0.0, 1.0)
 	body.set_physics_process(true)
-
-	# Give player snowball powers
 	body.can_throw_snowballs = true
-
-	print("CUTSCENE FINISHED!")
 
 
 func show_dialogue(message: String):
 	# Fade old paragraph out
 	await fade_dialogue(0.0, 0.5)
 
-	# Change text
+	# Change the text
 	dialogue_text.text = message
-
-	# Make text visible
 	dialogue_text.visible_characters = -1
 
 	# Fade new paragraph in
 	await fade_dialogue(1.0, 0.5)
 
-	# Keep paragraph on screen
+	# Keep paragraph on screen for 5 seconds
 	await get_tree().create_timer(5.0).timeout
 
 

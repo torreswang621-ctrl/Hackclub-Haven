@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfto14d1osltc"
-path="res://.godot/imported/BackGround_PEAK.png-d8f9f6d2f119a212d6c695b6fc151931.ctex"
+uid="uid://ctau6ttcbapn6"
+path="res://.godot/imported/BreakableBlock_StonePhase2.png-23969e083da16918b4feee59b5c9afa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BackGround_PEAK.png"
-dest_files=["res://.godot/imported/BackGround_PEAK.png-d8f9f6d2f119a212d6c695b6fc151931.ctex"]
+source_file="res://BreakableBlock_StonePhase2.png"
+dest_files=["res://.godot/imported/BreakableBlock_StonePhase2.png-23969e083da16918b4feee59b5c9afa3.ctex"]
 
 [params]
 
