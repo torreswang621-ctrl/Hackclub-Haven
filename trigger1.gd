@@ -4,7 +4,6 @@ extends Area2D
 var has_triggered := false
 
 @onready var cutscene = $"../Cutscene"
-@onready var cutscene = $"../Cutscene"
 
 func _ready():
 	if not body_entered.is_connected(_on_body_entered):

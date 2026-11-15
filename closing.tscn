@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dvjxwpawpeypt"]
+
+[ext_resource type="Script" uid="uid://d1kmnhuua34e4" path="res://closingcutscene.gd" id="1_0nfc5"]
+[ext_resource type="Texture2D" uid="uid://g28siof06rsj" path="res://Finale_Cutscene.png" id="2_28h8o"]
+[ext_resource type="Texture2D" uid="uid://ckfsnyh8vd8xj" path="res://_Cutscene1_BG.png" id="2_jrg4k"]
+[ext_resource type="FontFile" uid="uid://cmxtw6aueourj" path="res://MedievalSharp-Book.ttf" id="3_28h8o"]
+
+[node name="Closing Cutscene" type="Control" unique_id=337817674]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0nfc5")
+opening_image_1 = ExtResource("2_28h8o")
+
+[node name="Background" type="TextureRect" parent="." unique_id=262783804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jrg4k")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=1022100861]
+custom_minimum_size = Vector2(1697, 120)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 860.0
+offset_right = 80.0
+offset_bottom = 980.0
+
+[node name="DialogueText" type="Label" parent="DialogueBox" unique_id=190899663]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 30.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_28h8o")
+theme_override_font_sizes/font_size = 40
+text = "TestText"
+autowrap_mode = 2
+
+[node name="ScreenFade" type="ColorRect" parent="." unique_id=148292477]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

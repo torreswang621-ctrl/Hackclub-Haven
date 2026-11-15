@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bixsm4p5g1efc"
-path="res://.godot/imported/Green_backdrop.png-d1766cb809613b178b727d078850cf19.ctex"
+uid="uid://g28siof06rsj"
+path="res://.godot/imported/Finale_Cutscene.png-c18e168414928ef648e0f3532f0661b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Green_backdrop.png"
-dest_files=["res://.godot/imported/Green_backdrop.png-d1766cb809613b178b727d078850cf19.ctex"]
+source_file="res://Finale_Cutscene.png"
+dest_files=["res://.godot/imported/Finale_Cutscene.png-c18e168414928ef648e0f3532f0661b1.ctex"]
 
 [params]
 

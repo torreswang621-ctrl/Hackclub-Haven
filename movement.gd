@@ -12,7 +12,10 @@ var auto_throw_snowballs := false
 var currently_throwing := false
 @onready var cutscene = $"../Cutscene"
 func _ready():
+	await get_tree().process_frame
+	await get_tree().process_frame
 	await cutscene.show_text_until_input("A and D to move", "Right")
+	await cutscene.show_text_until_input("Space to jump", "Jump")
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -41,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		if(currently_throwing):
 			if snowball_cd <= 0:
 				throw_ball(throwdirection)
-				snowball_cd = 3
+				snowball_cd = 5
 			
 	else:
 		if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:
