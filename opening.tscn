@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b4xjoxegwgsgd"]
 
 [ext_resource type="Script" uid="uid://82ivbrxxk56j" path="res://opencutscene.gd" id="1_gggm5"]
-[ext_resource type="Texture2D" uid="uid://bj1be0fa26ias" path="res://Main_Menu_BG.png" id="2_psf0h"]
+[ext_resource type="Texture2D" uid="uid://dxg3ot6bj4f2d" path="res://Opening_Cutscene1.png" id="2_psf0h"]
+[ext_resource type="Texture2D" uid="uid://bx4iadovk007t" path="res://Opening_Cutscene2_BG.png" id="3_7vh34"]
 [ext_resource type="Texture2D" uid="uid://ckfsnyh8vd8xj" path="res://_Cutscene1_BG.png" id="3_mha44"]
 [ext_resource type="FontFile" uid="uid://cmxtw6aueourj" path="res://MedievalSharp-Book.ttf" id="4_7vh34"]
 
@@ -14,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gggm5")
 opening_image_1 = ExtResource("2_psf0h")
-opening_image_2 = ExtResource("3_mha44")
+opening_image_2 = ExtResource("3_7vh34")
 
 [node name="Background" type="TextureRect" parent="." unique_id=262783804]
 layout_mode = 1

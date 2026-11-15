@@ -45,7 +45,7 @@ func start_cutscene(cutscenenum):
 		"I gave you my blessings, take the power to have snowballs of steel.",
 		"You can now break rocks with your snowballs.",
 		"However, with great power comes great cost.",
-		"You will not be able to throw snowballs as much now.",
+		"You will not be able to throw snowballs as fast now.",
 		"Venture deeper into the cave and free me at last.",
 		"Thank you traveller."
 		]

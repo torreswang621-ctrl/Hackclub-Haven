@@ -29,3 +29,4 @@ func _on_body_entered(body):
 
 	body.set_physics_process(true)
 	Global.can_break_rock = true
+	body.current_snow_cd_time = 15
