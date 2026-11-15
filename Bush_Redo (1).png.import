@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhnodqqpwg7b0"
-path="res://.godot/imported/BreakableBlock_Phase2.png-000e139014a97cd81bbb66f5ab505508.ctex"
+uid="uid://bpo6bn3ecrafd"
+path="res://.godot/imported/Bush_Redo (1).png-88d644fd60bb63d0025d94ca38bd86f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BreakableBlock_Phase2.png"
-dest_files=["res://.godot/imported/BreakableBlock_Phase2.png-000e139014a97cd81bbb66f5ab505508.ctex"]
+source_file="res://Bush_Redo (1).png"
+dest_files=["res://.godot/imported/Bush_Redo (1).png-88d644fd60bb63d0025d94ca38bd86f3.ctex"]
 
 [params]
 

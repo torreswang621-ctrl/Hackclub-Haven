@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var current_snow_cd_time = 2.5
+var current_snow_cd_time = 3
 var snowball_cd = 0
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
