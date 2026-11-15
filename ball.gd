@@ -1,18 +1,19 @@
 
 extends CharacterBody2D
 
-static var damaged_tiles := {}
-
 @onready var _sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var decay := 5
 var _timer := 0
 
+
 func _ready():
 	_update_anim()
 
+
 func _physics_process(delta):
 	velocity.y += 1200 * delta
+
 	var collision = move_and_collide(velocity * delta)
 
 	if collision:
@@ -27,16 +28,12 @@ func _physics_process(delta):
 			var atlas_coords = hit_object.get_cell_atlas_coords(cell)
 			var alternative_id = hit_object.get_cell_alternative_tile(cell)
 
-			# HIT 1: Change Alternative ID 9 -> 10
-			if alternative_id == 9:
-				hit_object.set_cell(cell, source_id, atlas_coords, 10)
+			# HIT 1: Source ID 9 -> 10
+			if source_id == 9:
+				hit_object.set_cell(cell, 10, atlas_coords, alternative_id)
 
-			# HIT 2: Change Alternative ID 10 -> 11
-			elif alternative_id == 10:
-				hit_object.set_cell(cell, source_id, atlas_coords, 11)
-
-			# HIT 3: Destroy tile
-			elif alternative_id == 11:
+			# HIT 2: Source ID 10 -> Destroy
+			elif source_id == 10:
 				hit_object.erase_cell(cell)
 
 			_lose_decay()
@@ -45,7 +42,7 @@ func _physics_process(delta):
 			position += collision.get_normal() * 2
 
 		else:
-			# It's a wall! Bounce and decay.
+			# Wall bounce
 			velocity = velocity.bounce(collision.get_normal())
 			_lose_decay()
 
