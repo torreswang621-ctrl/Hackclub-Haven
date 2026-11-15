@@ -1,11 +1,12 @@
 extends CharacterBody2D
-var current_snow_cd_time = 25
+var current_snow_cd_time = 2.5
 var snowball_cd = 0
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 @onready var _animated_sprite = $AnimatedSprite2D
 var _current_anim := ""
 var BallScene = preload("res://ball.tscn")
+var can_throw_snowballs := false
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		_animated_sprite.flip_h = false
 	
 	move_and_slide()
-	if Input.is_action_just_pressed("Throw") and snowball_cd == 0:
+	if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:
 		throw_ball(direction)
 		snowball_cd = current_snow_cd_time
 	if not is_on_floor():

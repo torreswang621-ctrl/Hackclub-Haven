@@ -34,6 +34,13 @@ func _physics_process(delta):
 
 			# HIT 2: Source ID 10 -> Destroy
 			elif source_id == 10:
+				hit_object.set_cell(cell, 11, atlas_coords, alternative_id)
+			
+			elif source_id == 12:
+				hit_object.set_cell(cell, 13, atlas_coords, alternative_id)
+
+			# HIT 2: Source ID 10 -> Destroy
+			elif source_id == 13:
 				hit_object.erase_cell(cell)
 
 			_lose_decay()
