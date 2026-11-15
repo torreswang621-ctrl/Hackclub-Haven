@@ -1,5 +1,19 @@
 [gd_scene format=3 uid="uid://cc4ngi213q6p4"]
 
+[ext_resource type="Script" uid="uid://4n0ihjdfe08k" path="res://mainmenu.gd" id="1_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://bj1be0fa26ias" path="res://Main_Menu_BG.png" id="2_wgsso"]
+[ext_resource type="FontFile" uid="uid://cmxtw6aueourj" path="res://MedievalSharp-Book.ttf" id="3_wgsso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q50l"]
+bg_color = Color(0.1254902, 0, 0.40392157, 1)
+border_color = Color(0.78039217, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67wa3"]
+bg_color = Color(0, 0.18039216, 0.7176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgnk2"]
+bg_color = Color(0, 0.16862746, 0.8980392, 1)
+
 [node name="Main Menu" type="Control" unique_id=145633674]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +21,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d2nv2")
+
+[node name="BG" type="TextureRect" parent="." unique_id=650116257]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_wgsso")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2022241268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 120.0
+offset_right = -400.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContent" type="VBoxContainer" parent="CenterContainer" unique_id=1822407738]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="CenterContainer/MenuContent" unique_id=1613947653]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wgsso")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q50l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_67wa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bgnk2")
+text = "Play"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/MenuContent" unique_id=521389131]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wgsso")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q50l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_67wa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bgnk2")
+text = "Credits"
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1400296043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -225.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CenterContainer2" unique_id=393359966]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wgsso")
+theme_override_font_sizes/font_size = 90
+text = "Shrouded Snowfall"

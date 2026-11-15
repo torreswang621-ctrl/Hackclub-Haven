@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hackclub Haven"
-run/main_scene="uid://du1r3j5673vca"
+run/main_scene="uid://cc4ngi213q6p4"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

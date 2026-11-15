@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://uvvh4ukioynk"]
+
+[ext_resource type="Script" uid="uid://d1vkjb1iasj7" path="res://credits.gd" id="1_g4wvt"]
+[ext_resource type="Texture2D" uid="uid://bj1be0fa26ias" path="res://Main_Menu_BG.png" id="2_g4wvt"]
+[ext_resource type="FontFile" uid="uid://cmxtw6aueourj" path="res://MedievalSharp-Book.ttf" id="3_j6beo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q50l"]
+bg_color = Color(0.1254902, 0, 0.40392157, 1)
+border_color = Color(0.78039217, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67wa3"]
+bg_color = Color(0, 0.18039216, 0.7176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgnk2"]
+bg_color = Color(0, 0.16862746, 0.8980392, 1)
+
+[node name="Credits" type="Control" unique_id=145633674]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g4wvt")
+
+[node name="BG" type="TextureRect" parent="." unique_id=650116257]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_g4wvt")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Center3" type="CenterContainer" parent="." unique_id=2022241268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContent" type="VBoxContainer" parent="Center3" unique_id=1822407738]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Credits" type="Label" parent="Center3/MenuContent" unique_id=1674665750]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j6beo")
+theme_override_font_sizes/font_size = 70
+text = "Game and Level Design: Torres Wang
+Art: Daniel Pan
+Music: Henry Duan"
+
+[node name="BackButton" type="Button" parent="Center3/MenuContent" unique_id=1613947653]
+custom_minimum_size = Vector2(250, 65)
+custom_maximum_size = Vector2(250, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j6beo")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q50l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_67wa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bgnk2")
+text = "Back"
