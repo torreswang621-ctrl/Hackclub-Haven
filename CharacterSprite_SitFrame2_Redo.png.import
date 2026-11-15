@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfdholuppb2m7"
-path="res://.godot/imported/CharacterSprite-IdleFront.png-3df4886addca0f5d5e94784527559793.ctex"
+uid="uid://cdi5powroinl"
+path="res://.godot/imported/CharacterSprite_SitFrame2_Redo.png-36d367b72b07ad6a6bd0362617765617.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CharacterSprite-IdleFront.png"
-dest_files=["res://.godot/imported/CharacterSprite-IdleFront.png-3df4886addca0f5d5e94784527559793.ctex"]
+source_file="res://CharacterSprite_SitFrame2_Redo.png"
+dest_files=["res://.godot/imported/CharacterSprite_SitFrame2_Redo.png-36d367b72b07ad6a6bd0362617765617.ctex"]
 
 [params]
 

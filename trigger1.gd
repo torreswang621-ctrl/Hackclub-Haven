@@ -4,6 +4,7 @@ extends Area2D
 var has_triggered := false
 
 @onready var cutscene = $"../Cutscene"
+@onready var cutscene = $"../Cutscene"
 
 func _ready():
 	if not body_entered.is_connected(_on_body_entered):
@@ -26,6 +27,7 @@ func _on_body_entered(body):
 	body.get_node("AnimatedSprite2D").play("idle")
 
 	await cutscene.start_cutscene(1)
-
+	
 	body.set_physics_process(true)
 	body.can_throw_snowballs = true
+	await cutscene.show_text_until_input("E to throw", "Throw")

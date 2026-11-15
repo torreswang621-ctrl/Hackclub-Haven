@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyugha282dmsi"
-path="res://.godot/imported/BreakableBlock_Stone.png-e7e5aecc5277dacc33454f7e997a16c9.ctex"
+uid="uid://c7ej1riehc6r1"
+path="res://.godot/imported/CharacterSprite_RightWalk1_RedoRedo.png-2eb201d1ad2588f6531f8ad8fdb41a7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BreakableBlock_Stone.png"
-dest_files=["res://.godot/imported/BreakableBlock_Stone.png-e7e5aecc5277dacc33454f7e997a16c9.ctex"]
+source_file="res://CharacterSprite_RightWalk1_RedoRedo.png"
+dest_files=["res://.godot/imported/CharacterSprite_RightWalk1_RedoRedo.png-2eb201d1ad2588f6531f8ad8fdb41a7e.ctex"]
 
 [params]
 

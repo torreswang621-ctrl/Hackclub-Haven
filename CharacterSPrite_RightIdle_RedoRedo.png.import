@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3j7ls7qg3hj2"
-path="res://.godot/imported/CharacterSprite-IdleFront3_Redp.png-0d96fa5ee21dbb87f89f5f84ee263442.ctex"
+uid="uid://bynikudp4uco5"
+path="res://.godot/imported/CharacterSPrite_RightIdle_RedoRedo.png-6698be268f928eefd8988b13ed4f2246.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CharacterSprite-IdleFront3_Redp.png"
-dest_files=["res://.godot/imported/CharacterSprite-IdleFront3_Redp.png-0d96fa5ee21dbb87f89f5f84ee263442.ctex"]
+source_file="res://CharacterSPrite_RightIdle_RedoRedo.png"
+dest_files=["res://.godot/imported/CharacterSPrite_RightIdle_RedoRedo.png-6698be268f928eefd8988b13ed4f2246.ctex"]
 
 [params]
 

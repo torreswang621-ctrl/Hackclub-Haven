@@ -8,7 +8,11 @@ var _current_anim := ""
 var BallScene = preload("res://ball.tscn")
 var can_throw_snowballs := false
 var throwdirection = 1;
-
+var auto_throw_snowballs := false
+var currently_throwing := false
+@onready var cutscene = $"../Cutscene"
+func _ready():
+	await cutscene.show_text_until_input("A and D to move", "Right")
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -31,15 +35,35 @@ func _physics_process(delta: float) -> void:
 		_animated_sprite.flip_h = false
 	
 	move_and_slide()
-	if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:
-		throw_ball(throwdirection)
-		snowball_cd = current_snow_cd_time
+	if(auto_throw_snowballs):
+		if(Input.is_action_just_pressed("Throw")):
+			currently_throwing = !currently_throwing
+		if(currently_throwing):
+			if snowball_cd <= 0:
+				throw_ball(throwdirection)
+				snowball_cd = 3
+			
+	else:
+		if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:
+			throw_ball(throwdirection)
+			snowball_cd = current_snow_cd_time
 	if not is_on_floor():
-		_play_anim("jump")
+		if direction != 0:
+			_play_anim("jump")
+		else:
+			_play_anim("idlejump")
 	elif direction != 0:
 		_play_anim("walk")
 	else:
-		_play_anim("idle")
+		if _current_anim == "sit" or _current_anim == "stand":
+			if _current_anim == "sit" and Input.is_action_just_pressed("Taunt"):
+				_play_anim("stand")
+			elif Input.is_action_just_pressed("Grab"):
+				_play_anim("sit")
+		elif Input.is_action_just_pressed("Grab"):
+			_play_anim("sit")
+		else:
+			_play_anim("idle")
 	if !snowball_cd == 0:
 		snowball_cd = snowball_cd-1
 	
