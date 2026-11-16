@@ -30,7 +30,7 @@ func _physics_process(delta):
 			
 			elif Global.can_break_rock == true:
 				if source_id == 9:
-					hit_object.erase_cell(cell)
+					hit_object.set_cell(cell, source_id, Vector2i(10, 0))
 				elif source_id == 10:
 					hit_object.erase_cell(cell)
 

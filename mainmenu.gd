@@ -9,10 +9,9 @@ func _ready():
 	load_button.pressed.connect(_on_load_pressed)
 
 func _on_play_pressed():
-	Global.phase = 1
+	Global.phase = 0
 	get_tree().change_scene_to_file("res://opening.tscn")
 func _on_load_pressed():
-	Global.phase = 1
 	get_tree().change_scene_to_file("res://scenes.tscn")
 func _on_credits_pressed():
 	get_tree().change_scene_to_file("res://credits.tscn")

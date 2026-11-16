@@ -10,13 +10,42 @@ var can_throw_snowballs := false
 var throwdirection = 1;
 var auto_throw_snowballs := false
 var currently_throwing := false
+
 @onready var cutscene = $"../Cutscene"
 func _ready():
+	await get_tree().process_frame
 	Global.can_break_rock = false
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await cutscene.show_text_until_input("A and D to move", "Right")
-	await cutscene.show_text_until_input("Space to jump", "Jump")
+	if Global.phase == 1:
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await cutscene.show_text_until_input("A and D to move", "Right")
+		await cutscene.show_text_until_input("Space to jump", "Jump")
+	elif Global.phase == 2:
+		var player = get_tree().current_scene.get_node("Player")
+		var destination = get_tree().current_scene.get_node("CutsceneTrigger1/CutsceneArea1")
+		player.global_position = destination.global_position
+		can_throw_snowballs = true
+		current_snow_cd_time = 15
+		await get_tree().process_frame
+		await cutscene.show_text_until_input("E to throw", "Throw")
+	elif Global.phase == 3:
+		var player = get_tree().current_scene.get_node("Player")
+		var destination = get_tree().current_scene.get_node("CutsceneTrigger2/CutsceneArea2")
+		player.global_position = destination.global_position
+		can_throw_snowballs = true
+		Global.can_break_rock = true
+	elif Global.phase == 4:
+		var player = get_tree().current_scene.get_node("Player")
+		var destination = get_tree().current_scene.get_node("CutsceneTrigger3/CutsceneArea3")
+		player.global_position = destination.global_position
+		can_throw_snowballs = true
+		Global.can_break_rock = true
+		auto_throw_snowballs = true
+		await get_tree().process_frame
+		await cutscene.show_text_until_input("press E to toggle autofire", "Throw")
+	else:
+		get_tree().change_scene_to_file("res://mainmenu.tscn")
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta

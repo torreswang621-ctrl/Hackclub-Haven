@@ -1,16 +1,16 @@
-
 extends CanvasLayer
 
 @onready var background_overlay = $Control/BackgroundOverlay
 @onready var dialogue_box = $Control/DialogueBox
 @onready var dialogue_text = $Control/DialogueBox/DialogueText
 @onready var screen_fade = $Control/ScreenFade
+@onready var skip_button = $Control/SkipButton
 
 var dialogue = []
 
 
 func _ready():
-
+	skip_button.pressed.connect(_on_skip_pressed)
 	background_overlay.hide()
 
 	$Control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -20,6 +20,8 @@ func _ready():
 
 	dialogue_box.hide()
 	dialogue_box.modulate.a = 0.0
+	
+	skip_button.hide()
 
 	dialogue_box.position = Vector2(40, 40)
 	dialogue_box.size = Vector2(1697, 140)
@@ -29,8 +31,18 @@ func _ready():
 	dialogue_text.add_theme_color_override("font_color", Color.WHITE)
 	dialogue_text.add_theme_font_size_override("font_size", 32)
 
+	# --- CHANGES START HERE ---
 	screen_fade.show()
-	screen_fade.modulate.a = 0.0
+	screen_fade.modulate.a = 1.0 # Start fully black!
+	
+	# Wait for 2 frames ("2 ticks")
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	# Fade away to transparent (0.0) over 1 second. 
+	# (You can adjust the "1.0" duration to make the fade faster or slower)
+	fade_screen(0.0, 1.0) 
+	# --- CHANGES END HERE ---
 
 
 func start_cutscene(cutscenenum):
@@ -71,12 +83,14 @@ func start_cutscene(cutscenenum):
 	await fade_screen(0.0, 1.0)
 
 	dialogue_box.show()
+	skip_button.show()
 
 	for line in dialogue:
 		await show_dialogue(line)
 
 	await fade_dialogue(0.0, 0.7)
 	dialogue_box.hide()
+	skip_button.hide()
 
 	await fade_screen(1.0, 1.0)
 
@@ -130,3 +144,7 @@ func show_text_until_input(message: String, input_action: StringName = &"ui_acce
 	await fade_dialogue(0.0, 0.5)
 
 	dialogue_box.hide()
+	
+func _on_skip_pressed():
+	Global.phase += 1
+	get_tree().reload_current_scene()

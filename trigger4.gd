@@ -1,7 +1,6 @@
 
 extends Area2D
 
-var has_triggered := false
 
 @onready var cutscene = $"../Cutscene"
 
@@ -13,7 +12,7 @@ func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
 
-	if has_triggered:
+	if Global.phase > 4:
 		return
 
 	get_tree().change_scene_to_file("res://closing.tscn")

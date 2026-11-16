@@ -1,7 +1,6 @@
 
 extends Area2D
 
-var has_triggered := false
 
 @onready var cutscene = $"../Cutscene"
 
@@ -13,10 +12,9 @@ func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
 
-	if has_triggered:
+	if Global.phase > 2:
 		return
 
-	has_triggered = true
 	body.velocity.x = -100
 
 	while not body.is_on_floor():

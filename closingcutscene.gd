@@ -5,6 +5,7 @@ extends Control
 @onready var dialogue_box = $DialogueBox
 @onready var dialogue_text = $DialogueBox/DialogueText
 @onready var screen_fade = $ScreenFade
+@onready var skip_button = $SkipButton
 
 @export var opening_image_1: Texture2D
 
@@ -21,6 +22,7 @@ func _ready():
 	dialogue_box.modulate.a = 0.0
 	screen_fade.color = Color.BLACK
 	screen_fade.show()
+	skip_button.pressed.connect(_on_skip_pressed)
 	await play_opening()
 
 func play_opening():
@@ -53,3 +55,7 @@ func fade_dialogue(target: float, duration: float):
 	var tween = create_tween()
 	tween.tween_property(dialogue_box, "modulate:a", target, duration)
 	await tween.finished
+	
+func _on_skip_pressed():
+	Global.phase = 0
+	get_tree().change_scene_to_file("res://mainmenu.tscn")
