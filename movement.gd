@@ -12,6 +12,7 @@ var auto_throw_snowballs := false
 var currently_throwing := false
 @onready var cutscene = $"../Cutscene"
 func _ready():
+	Global.can_break_rock = false
 	await get_tree().process_frame
 	await get_tree().process_frame
 	await cutscene.show_text_until_input("A and D to move", "Right")

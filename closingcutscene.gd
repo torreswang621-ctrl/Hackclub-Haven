@@ -34,7 +34,7 @@ func play_opening():
 	await fade_dialogue(0.0, 0.5)
 	await fade_screen(1.0, 1.5)
 
-
+	Global.phase = 0
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
 
 func show_dialogue(message: String):

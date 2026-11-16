@@ -60,7 +60,17 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_3q50l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_67wa3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bgnk2")
-text = "Play"
+text = "Start New"
+
+[node name="LoadButton" type="Button" parent="CenterContainer/MenuContent" unique_id=1067532306]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wgsso")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q50l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_67wa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bgnk2")
+text = "Load Game"
 
 [node name="CreditsButton" type="Button" parent="CenterContainer/MenuContent" unique_id=521389131]
 custom_minimum_size = Vector2(250, 65)

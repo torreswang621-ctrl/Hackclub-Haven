@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://ckfsnyh8vd8xj" path="res://_Cutscene1_BG.png" id="3_mha44"]
 [ext_resource type="FontFile" uid="uid://cmxtw6aueourj" path="res://MedievalSharp-Book.ttf" id="4_7vh34"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psf0h"]
+bg_color = Color(0.1254902, 0, 0.40392157, 1)
+border_color = Color(0.78039217, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mha44"]
+bg_color = Color(0, 0.18039216, 0.7176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vh34"]
+bg_color = Color(0, 0.16862746, 0.8980392, 1)
+
 [node name="Opening Cutscene" type="Control" unique_id=337817674]
 layout_mode = 3
 anchors_preset = 15
@@ -60,3 +70,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="SkipButton" type="Button" parent="." unique_id=1912119924]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 1495.0
+offset_top = 27.0
+offset_right = 1745.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("4_7vh34")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_psf0h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mha44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vh34")
+text = "Skip"

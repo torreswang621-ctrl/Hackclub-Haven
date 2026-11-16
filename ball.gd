@@ -20,27 +20,17 @@ func _physics_process(delta):
 		var hit_object = collision.get_collider()
 
 		if hit_object is TileMapLayer:
-			# Find which cell we hit
 			var col_point = collision.get_position() - collision.get_normal() * 0.1
 			var cell = hit_object.local_to_map(hit_object.to_local(col_point))
 
 			var source_id = hit_object.get_cell_source_id(cell)
-			var atlas_coords = hit_object.get_cell_atlas_coords(cell)
-			var alternative_id = hit_object.get_cell_alternative_tile(cell)
 
-			# HIT 1: Source ID 9 -> 10
 			if source_id == 12:
-				hit_object.set_cell(cell, 13, atlas_coords, alternative_id)
-
-			# HIT 2: Source ID 10 -> Destroy
-			elif source_id == 13:
 				hit_object.erase_cell(cell)
 			
 			elif Global.can_break_rock == true:
 				if source_id == 9:
-					hit_object.set_cell(cell, 10, atlas_coords, alternative_id)
-
-				# HIT 2: Source ID 10 -> Destroy
+					hit_object.erase_cell(cell)
 				elif source_id == 10:
 					hit_object.erase_cell(cell)
 
@@ -50,7 +40,6 @@ func _physics_process(delta):
 			position += collision.get_normal() * 2
 
 		else:
-			# Wall bounce
 			velocity = velocity.bounce(collision.get_normal())
 			_lose_decay()
 
