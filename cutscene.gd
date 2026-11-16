@@ -145,6 +145,23 @@ func show_text_until_input(message: String, input_action: StringName = &"ui_acce
 
 	dialogue_box.hide()
 	
+func show_text(message: String):
+	dialogue_box.show()
+	dialogue_text.visible = true
+
+	await fade_dialogue(0.0, 0.0)
+
+	dialogue_text.text = message
+	dialogue_text.visible_characters = -1
+
+	await fade_dialogue(1.0, 0.5)
+
+	await get_tree().create_timer(3.0).timeout
+
+	await fade_dialogue(0.0, 0.5)
+
+	dialogue_box.hide()
+	
 func _on_skip_pressed():
 	Global.phase += 1
 	get_tree().reload_current_scene()

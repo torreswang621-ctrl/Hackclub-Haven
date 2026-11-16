@@ -1,5 +1,19 @@
 [gd_scene format=3 uid="uid://83jvbqtxbw6w"]
 
+[ext_resource type="Script" uid="uid://dkt744i5ykc51" path="res://selection.gd" id="1_552j8"]
+[ext_resource type="Texture2D" uid="uid://bj1be0fa26ias" path="res://Main_Menu_BG.png" id="2_0mr60"]
+[ext_resource type="FontFile" uid="uid://cmxtw6aueourj" path="res://MedievalSharp-Book.ttf" id="3_o8256"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68yc8"]
+bg_color = Color(0.1254902, 0, 0.40392157, 1)
+border_color = Color(0.78039217, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gndl6"]
+bg_color = Color(0, 0.18039216, 0.7176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb7fm"]
+bg_color = Color(0, 0.16862746, 0.8980392, 1)
+
 [node name="Control" type="Control" unique_id=2129218684]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +21,91 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_552j8")
+
+[node name="BG" type="TextureRect" parent="." unique_id=2116163480]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_0mr60")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="PlayButton" type="Button" parent="." unique_id=1339131113]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 550.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_o8256")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
+text = "Scene 1:
+The Adventure Begins"
+
+[node name="PlayButton2" type="Button" parent="." unique_id=1405996382]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 100.0
+offset_right = 1050.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_o8256")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
+text = "Scene 2:
+The Chained God"
+
+[node name="PlayButton3" type="Button" parent="." unique_id=1736296596]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 100.0
+offset_right = 1550.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_o8256")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
+text = "Scene 3:
+Into the Cave"
+
+[node name="PlayButton4" type="Button" parent="." unique_id=613736226]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 240.0
+offset_right = 550.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("3_o8256")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
+text = "Scene 4:
+The Free God"
+
+[node name="BackButton" type="Button" parent="." unique_id=111323704]
+custom_minimum_size = Vector2(125, 65)
+layout_mode = 0
+offset_left = 1510.0
+offset_top = 920.0
+offset_right = 1760.0
+offset_bottom = 985.0
+theme_override_fonts/font = ExtResource("3_o8256")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
+text = "Back"

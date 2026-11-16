@@ -27,4 +27,5 @@ func _on_body_entered(body):
 
 	body.set_physics_process(true)
 	body.auto_throw_snowballs = true
+	Global.phase += 1
 	await cutscene.show_text_until_input("press E to toggle autofire", "Throw")

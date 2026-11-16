@@ -26,7 +26,8 @@ func _ready():
 		var destination = get_tree().current_scene.get_node("CutsceneTrigger1/CutsceneArea1")
 		player.global_position = destination.global_position
 		can_throw_snowballs = true
-		current_snow_cd_time = 15
+		await cutscene.show_text("Hard as rock snowballs unlocked.")
+
 		await get_tree().process_frame
 		await cutscene.show_text_until_input("E to throw", "Throw")
 	elif Global.phase == 3:
@@ -35,6 +36,7 @@ func _ready():
 		player.global_position = destination.global_position
 		can_throw_snowballs = true
 		Global.can_break_rock = true
+		current_snow_cd_time = 15
 	elif Global.phase == 4:
 		var player = get_tree().current_scene.get_node("Player")
 		var destination = get_tree().current_scene.get_node("CutsceneTrigger3/CutsceneArea3")
@@ -65,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if(direction == -1):
 		_animated_sprite.flip_h = true
-	else:
+	elif(direction == 1):
 		_animated_sprite.flip_h = false
 	
 	move_and_slide()
@@ -75,7 +77,7 @@ func _physics_process(delta: float) -> void:
 		if(currently_throwing):
 			if snowball_cd <= 0:
 				throw_ball(throwdirection)
-				snowball_cd = current_snow_cd_time
+				snowball_cd = 3
 			
 	else:
 		if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:
@@ -97,8 +99,8 @@ func _physics_process(delta: float) -> void:
 			_play_anim("sit")
 		else:
 			_play_anim("idle")
-	if !snowball_cd == 0:
-		snowball_cd = snowball_cd-1
+	if snowball_cd > 0:
+		snowball_cd -= 1
 	
 func _play_anim(anim_name: String) -> void:
 		if _current_anim == anim_name:

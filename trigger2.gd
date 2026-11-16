@@ -24,7 +24,8 @@ func _on_body_entered(body):
 	body.get_node("AnimatedSprite2D").play("idle")
 
 	await cutscene.start_cutscene(2)
-
+	Global.phase += 1
 	body.set_physics_process(true)
 	Global.can_break_rock = true
 	body.current_snow_cd_time = 15
+	await cutscene.show_text("Hard as rock snowballs unlocked.")
