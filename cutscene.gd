@@ -94,7 +94,7 @@ func show_dialogue(message: String):
 
 	await fade_dialogue(1.0, 0.5)
 
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 
 
 func fade_screen(target: float, duration: float):

@@ -1,8 +1,9 @@
+
 extends AudioStreamPlayer
 
 func _ready():
-	print("BACKGROUND MUSIC LOADED!")
-	if stream:
-		play()
-	else:
-		print("ERROR: NO MUSIC ASSIGNED!")
+	var wav = stream as AudioStreamWAV
+	if wav:
+		wav.loop_mode = AudioStreamWAV.LOOP_FORWARD
+
+	play()

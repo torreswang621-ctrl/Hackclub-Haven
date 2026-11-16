@@ -5,4 +5,5 @@
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer" unique_id=1681997296]
 stream = ExtResource("1_8w7t4")
+autoplay = true
 script = ExtResource("2_auuaj")
