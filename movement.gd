@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 		if(currently_throwing):
 			if snowball_cd <= 0:
 				throw_ball(throwdirection)
-				snowball_cd = 5
+				snowball_cd = current_snow_cd_time
 			
 	else:
 		if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:

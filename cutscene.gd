@@ -20,7 +20,7 @@ func _ready():
 
 	dialogue_box.hide()
 	dialogue_box.modulate.a = 0.0
-	
+	skip_button.position = Vector2(1487, 895)
 	skip_button.hide()
 
 	dialogue_box.position = Vector2(40, 40)
