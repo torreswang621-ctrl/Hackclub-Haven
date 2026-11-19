@@ -15,6 +15,16 @@ bg_color = Color(0, 0.18039216, 0.7176471, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwc4k"]
 bg_color = Color(0, 0.16862746, 0.8980392, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jswh6"]
+bg_color = Color(0.1254902, 0, 0.40392157, 1)
+border_color = Color(0.78039217, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e03se"]
+bg_color = Color(0, 0.18039216, 0.7176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6652"]
+bg_color = Color(0, 0.16862746, 0.8980392, 1)
+
 [node name="Closing Cutscene" type="Control" unique_id=337817674]
 layout_mode = 3
 anchors_preset = 15
@@ -82,3 +92,62 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jrg4k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_28h8o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xwc4k")
 text = "Skip"
+
+[node name="Button1" type="Button" parent="." unique_id=2036807063]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 850.0
+offset_right = 450.0
+offset_bottom = 950.0
+theme_override_fonts/font = ExtResource("3_28h8o")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jswh6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e03se")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u6652")
+disabled = true
+text = "Power"
+
+[node name="Button2" type="Button" parent="." unique_id=1790964938]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 500.0
+offset_top = 850.0
+offset_right = 850.0
+offset_bottom = 950.0
+theme_override_fonts/font = ExtResource("3_28h8o")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jswh6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e03se")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u6652")
+disabled = true
+text = "Speed"
+
+[node name="Button3" type="Button" parent="." unique_id=100998465]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 900.0
+offset_top = 850.0
+offset_right = 1250.0
+offset_bottom = 950.0
+theme_override_fonts/font = ExtResource("3_28h8o")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jswh6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e03se")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u6652")
+disabled = true
+text = "Jump"
+
+[node name="Button4" type="Button" parent="." unique_id=1608885102]
+custom_minimum_size = Vector2(250, 65)
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 850.0
+offset_right = 1650.0
+offset_bottom = 950.0
+theme_override_fonts/font = ExtResource("3_28h8o")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jswh6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e03se")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u6652")
+text = "Nothing"

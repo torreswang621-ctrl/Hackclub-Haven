@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var current_snow_cd_time = 3
+var current_snow_cd_time = 5
 var snowball_cd = 0
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -26,8 +26,6 @@ func _ready():
 		var destination = get_tree().current_scene.get_node("CutsceneTrigger1/CutsceneArea1")
 		player.global_position = destination.global_position
 		can_throw_snowballs = true
-		await cutscene.show_text("Hard as rock snowballs unlocked.")
-
 		await get_tree().process_frame
 		await cutscene.show_text_until_input("E to throw", "Throw")
 	elif Global.phase == 3:
@@ -37,6 +35,7 @@ func _ready():
 		can_throw_snowballs = true
 		Global.can_break_rock = true
 		current_snow_cd_time = 15
+		await cutscene.show_text("Hard as rock snowballs unlocked.")
 	elif Global.phase == 4:
 		var player = get_tree().current_scene.get_node("Player")
 		var destination = get_tree().current_scene.get_node("CutsceneTrigger3/CutsceneArea3")
@@ -46,6 +45,19 @@ func _ready():
 		auto_throw_snowballs = true
 		await get_tree().process_frame
 		await cutscene.show_text_until_input("press E to toggle autofire", "Throw")
+	elif Global.phase == 10:
+		pass
+	elif Global.phase == 20:
+		pass
+	elif Global.phase == 30:
+		pass
+	elif Global.phase == 40:
+		var player = get_tree().current_scene.get_node("Player")
+		var destination = get_tree().current_scene.get_node("CutsceneTrigger4/CutsceneArea4")
+		player.global_position = destination.global_position
+		can_throw_snowballs = true
+		Global.can_break_rock = true
+		await cutscene.show_text("You sense a dark presence on your right in the cave.")
 	else:
 		get_tree().change_scene_to_file("res://mainmenu.tscn")
 func _physics_process(delta: float) -> void:
@@ -77,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		if(currently_throwing):
 			if snowball_cd <= 0:
 				throw_ball(throwdirection)
-				snowball_cd = 3
+				snowball_cd = 5
 			
 	else:
 		if Input.is_action_just_pressed("Throw") and snowball_cd == 0 and can_throw_snowballs == true:

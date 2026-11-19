@@ -41,10 +41,10 @@ custom_minimum_size = Vector2(250, 65)
 layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
-offset_right = 550.0
+offset_right = 450.0
 offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("3_o8256")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
@@ -54,12 +54,12 @@ The Adventure Begins"
 [node name="PlayButton2" type="Button" parent="." unique_id=1405996382]
 custom_minimum_size = Vector2(250, 65)
 layout_mode = 0
-offset_left = 600.0
+offset_left = 500.0
 offset_top = 100.0
-offset_right = 1050.0
+offset_right = 850.0
 offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("3_o8256")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
@@ -69,12 +69,12 @@ The Chained God"
 [node name="PlayButton3" type="Button" parent="." unique_id=1736296596]
 custom_minimum_size = Vector2(250, 65)
 layout_mode = 0
-offset_left = 1100.0
+offset_left = 900.0
 offset_top = 100.0
-offset_right = 1550.0
+offset_right = 1250.0
 offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("3_o8256")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
@@ -84,12 +84,12 @@ Into the Cave"
 [node name="PlayButton4" type="Button" parent="." unique_id=613736226]
 custom_minimum_size = Vector2(250, 65)
 layout_mode = 0
-offset_left = 100.0
-offset_top = 240.0
-offset_right = 550.0
-offset_bottom = 340.0
+offset_left = 1300.0
+offset_top = 100.0
+offset_right = 1650.0
+offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("3_o8256")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_68yc8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gndl6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jb7fm")
